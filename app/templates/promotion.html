@@ -1,0 +1,40 @@
+<td class='hidden'>{{promotion.id}}</td>
+<td style="font-size:14px;">{{$index +1 }}</td>
+<td>
+	<form style="margin:0; font-size:12px; text-align:center;">
+
+		<label style="margin:0.25em; line-height:0.3em;" ng-style="{'color':promotion.type === 'id'?'cyan':'white'}">
+			ID<br/>
+			<input type="radio" name="promotion_type" ng-model="promotion.type" value="id"
+				ng-checked="promotion.type === 'id'">
+		</label>
+		<label style="margin:0.25em; line-height:0.3em;" ng-style="{'color':promotion.type === 'ad'?'cyan':'white'}">
+			Ad<br/>
+			<input type="radio" name="promotion_type" ng-model="promotion.type" value="ad"
+				ng-checked="promotion.type === 'ad'">
+		</label>
+		<label style="margin:0.25em; line-height:0.3em;" ng-style="{'color':promotion.type === 'promo'?'cyan':'white'}">
+			Promo<br/>
+			<input type="radio" name="promotion_type" ng-model="promotion.type" value="promo"
+				ng-checked="promotion.type === 'promo'">
+		</label>
+		<label style="margin:0.25em; line-height:0.3em;" ng-style="{'color':promotion.type === 'psa'?'cyan':'white'}">
+			PSA<br/>
+			<input type="radio" name="promotion_type" ng-model="promotion.type" value="psa"
+				ng-checked="promotion.type === 'psa'">
+		</label>
+	</form>
+</td>
+<td class='promotion_name' ng-if="promotion.type === 'id'">
+	<label for="{{'land_acknowledgement_'+$index}}" style="font-size:14px; font-weight:normal;">You are listening to CiTR Radio 101.9FM, broadcasting from unceded
+		Musqueam territory in Vancouver
+		<input id="{{'land_acknowledgement_'+$index}}" class="required large-checkbox" type="checkbox" ng-model="promotion.played"
+			ng-change='playsheet.update()' ng-true-value="1" ng-false-value="0"/>
+	</label>
+</td>
+<td class='promotion_name' ng-if="promotion.type != 'id'">
+	<input class="required" style="width:700px" ng-model='promotion.name' ng-change='playsheet.update()' />
+</td>
+
+
+<td><button style="height:1.5em; width:80%;" ng-click=playsheet.removePromotion($index)><img src='images/expanded.png'></button></td>
