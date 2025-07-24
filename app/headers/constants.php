@@ -1,6 +1,6 @@
 <?php
 	include_once("session_header.php");
-	require_once(dirname($_SERVER['DOCUMENT_ROOT']).'/config.php');
+	require_once($_SERVER['DOCUMENT_ROOT'].'/newdjland/config.php');
 	//require_once("security_header.php");
 	$constants = new StdClass();
 	$constants->permission_levels = $djland_permission_levels;

@@ -2,7 +2,7 @@
 
 require_once("session_header.php");
 //DB HEADER
-require_once(dirname($_SERVER['DOCUMENT_ROOT']).'/config.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/newdjland/config.php');
 if(!$testing_environment) error_reporting(0);
 global $station_info,$db;
 date_default_timezone_set($station_info['timezone']);

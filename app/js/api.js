@@ -1,6 +1,6 @@
 angular.module('djland.api', []).factory('call', function ($http, $location) {
 
-    var API_URL_BASE = 'api2/public'; // api.citr.ca when live
+    var API_URL_BASE = 'api_fallback.php'; // Temporary fallback while Laravel API is fixed
 
 	return {
 //		debug:true,

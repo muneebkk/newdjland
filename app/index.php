@@ -1,11 +1,11 @@
 <?php
 //Go to setup if config.php doesn't exist
 if (
-	!file_exists(dirname($_SERVER['DOCUMENT_ROOT']) . '/config.php')
+	!file_exists($_SERVER['DOCUMENT_ROOT'] . '/newdjland/config.php')
 	|| (isset($_POST['next_form']) && $_POST['next_form'] == 'write_config')
 	|| (isset($_POST['next_form']) && $_POST['next_form'] == 'setup_database')
 ) {
-	require_once(dirname($_SERVER['DOCUMENT_ROOT']) . '/setup/setup.php');
+	require_once($_SERVER['DOCUMENT_ROOT'] . '/newdjland/setup/setup.php');
 	return;
 }
 

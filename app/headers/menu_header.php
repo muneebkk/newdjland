@@ -1,6 +1,6 @@
 <?php
 //MENU HEADER
-require_once(dirname($_SERVER['DOCUMENT_ROOT']) . '/config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/newdjland/config.php');
 require_once('security_header.php');
 
 function admin_menu()
